@@ -16,7 +16,7 @@ export default function Dashboard() {
             <Logo light={true} />
             <p className="text-emerald-200 text-sm font-semibold tracking-wide border-l border-emerald-600 pl-3 hidden sm:block">Hitung Zakat dan Waris</p>
           </div>
-          {/* Tanggal Masehi & Hijriah */}
+          {/* Tanggal — tampil di sm ke atas (landscape/tablet/desktop) */}
           <div className="hidden sm:flex items-center gap-2 bg-white/10 rounded-xl px-3 py-2">
             <CalendarDays className="w-4 h-4 text-emerald-300 shrink-0" />
             <div className="text-right">
@@ -27,6 +27,18 @@ export default function Dashboard() {
                 {today.dayHijri}, {today.dateHijri}
               </p>
             </div>
+          </div>
+        </div>
+        {/* Tanggal — hanya tampil di portrait mobile (xs, < sm) */}
+        <div className="flex sm:hidden items-center justify-center gap-2 mt-2 pt-2 border-t border-emerald-700">
+          <CalendarDays className="w-3.5 h-3.5 text-emerald-300 shrink-0" />
+          <div className="text-center">
+            <p className="text-white text-xs font-semibold leading-tight">
+              {today.dayMasehi}, {today.dateMasehi}
+            </p>
+            <p className="text-emerald-300 text-xs leading-tight">
+              {today.dayHijri}, {today.dateHijri}
+            </p>
           </div>
         </div>
       </header>
