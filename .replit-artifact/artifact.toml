@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/hikaris/"
+title = "HIKARIS - Hitung Zakat dan Waris"
+version = "1.0.0"
+id = "artifacts/hikaris"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/hikaris/" ]
+localPort = 22852
+
+[services.development]
+run = "pnpm --filter @workspace/hikaris run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/hikaris", "run", "build" ]
+publicDir = "artifacts/hikaris/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22852"
+BASE_PATH = "/hikaris/"
