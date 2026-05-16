@@ -1,5 +1,5 @@
 import { useLocation } from "wouter";
-import { Coins, ScrollText, ArrowRight, CalendarDays } from "lucide-react";
+import { Coins, ScrollText, ArrowRight, CalendarDays, MessageSquareHeart } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { getDualDate } from "@/lib/hijri";
 
@@ -105,6 +105,20 @@ export default function Dashboard() {
                 Mulai Hitung <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
               </span>
             </button>
+          </div>
+
+          {/* Tombol Survei */}
+          <div className="mt-6 animate-slide-up text-center" style={{ animationDelay: "0.3s" }}>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdX_FeSsYQ2mUzdorEQ8jdG3Ddf7O_7PQCkPFgJ5oQczasd4A/viewform?usp=publish-editor"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 bg-white/70 backdrop-blur-sm hover:bg-emerald-50 border-2 border-emerald-300 hover:border-emerald-500 text-emerald-700 hover:text-emerald-800 font-semibold rounded-xl px-6 py-3 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5"
+            >
+              <MessageSquareHeart className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+              Beri Penilaian App
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+            </a>
           </div>
         </div>
       </main>
