@@ -3,10 +3,9 @@ import { Coins, ScrollText, ArrowRight, CalendarDays, MessageSquareHeart } from 
 import { Logo } from "@/components/Logo";
 import { getDualDate } from "@/lib/hijri";
 
-const today = getDualDate();
-
 export default function Dashboard() {
   const [, navigate] = useLocation();
+  const today = getDualDate();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-green-100 to-teal-100 flex flex-col">
